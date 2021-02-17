@@ -1,0 +1,6 @@
+orgid: adb0998e-35ef-4e29-88b4-820a4419e62f
+appid: 55fa5b1e-72d2-403b-b078-2e58e8e2bd9d
+
+variables:
+    DAST_URL: http://localhost:8080/ecom/api/products
+    DAST_FULL_SCAN: true #true|false

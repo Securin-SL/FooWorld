@@ -1,0 +1,26 @@
+spring:
+  datasource:
+    driver-class-name: org.hsqldb.jdbc.JDBCDriver
+    url: jdbc:hsqldb:mem:testdb;DB_CLOSE_DELAY=-1
+    username: sa
+    password:
+  jpa:
+    hibernate:
+      ddl-auto: create
+
+server:
+  servlet:
+    context-path: /ecom/api
+
+springdoc:
+  version: 1.4.7
+  api-docs:
+    path: /doc
+  swagger-ui:
+    path: /doc/ui
+
+application:
+  version: 1.0
+  name: Sample E-commerce
+  description: This is an E-commerce application that enables sellers to create products and load up inventory of products and customers to order products.
+  license: MIT License
