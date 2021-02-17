@@ -13,7 +13,7 @@ jobs:
     - run: echo random-number ${{ steps.foo.outputs.random-number }}
     - run: echo "GITHUB_WORKSPACE = $GITHUB_WORKSPACE"
       shell: bash
-    - run: echo hello world > math-homework.txt
+    - run: echo hello wednesday > math-homework.txt
     #- name: test
      # run : |
       # echo "::set-output name=action_fruit::${github.workspace}/math-homework.txt" 
