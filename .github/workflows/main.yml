@@ -14,10 +14,10 @@ jobs:
     - run: echo "GITHUB_WORKSPACE = $GITHUB_WORKSPACE"
       shell: bash
     - run: echo hello world > math-homework.txt
-    - name: test
+    #- name: test
      # run : |
       # echo "::set-output name=action_fruit::${github.workspace}/math-homework.txt" 
-      id: run_test
+     # id: run_test
     - name: get test
       run: echo ${{(steps.run_test.outputs.action_fruit)}}
     
