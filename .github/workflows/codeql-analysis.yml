@@ -20,7 +20,7 @@ on:
   workflow_dispatch:
     branches: [ main ]
   #schedule:
-    - cron: '17 20 * * 6'
+ # - cron: '17 20 * * 6'
 
 jobs:
   analyze:
