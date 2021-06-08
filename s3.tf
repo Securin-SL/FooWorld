@@ -20,3 +20,5 @@ resource "aws_s3_bucket" "b2" {
     Name        = "PublicBucket"
   }
 }
+
+#testing trivy
