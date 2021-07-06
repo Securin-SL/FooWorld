@@ -2,7 +2,7 @@
 # See: https://circleci.com/docs/2.0/configuration-reference.
 version: 2.1
 orbs:
-  snyk: snyk/snyk@x.y.z
+  snyk: snyk/snyk@0.1.0
 jobs:
   build:
     docker:
