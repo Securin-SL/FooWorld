@@ -7,6 +7,6 @@ workflows:
   owasp:
     jobs:
       - owasp/maven_owasp_dependency_check:
-          executor: java_11
+          executor: java
           context: global
  
