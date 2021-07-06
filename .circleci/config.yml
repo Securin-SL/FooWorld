@@ -37,7 +37,7 @@ jobs:
             docker build -t "example/test:staging" staging/
             docker build -t "example/test:latest" prod/
           name: build containers
-      - anchore/analyze_local_image:
+      - anchore/anchore-engine@1.9.0:
           image_name: 'example/test:dev example/test:staging example/test:latest'
           policy_bundle_file_path: .circleci/.anchore/policy_bundle.json
           policy_failure: true
