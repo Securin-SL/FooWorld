@@ -25,6 +25,26 @@ jobs:
       - run:
           name: Test
           command: mvn test
+          
+  local_image_scan:
+    executor: anchore/anchore_engine
+    steps:
+      - setup_remote_docker
+      - checkout
+      - run:
+          command: |
+            docker build -t "example/test:dev" dev/
+            docker build -t "example/test:staging" staging/
+            docker build -t "example/test:latest" prod/
+          name: build containers
+      - anchore/analyze_local_image:
+          image_name: 'example/test:dev example/test:staging example/test:latest'
+          policy_bundle_file_path: .circleci/.anchore/policy_bundle.json
+          policy_failure: true
+          timeout: '500'
+      - anchore/parse_reports
+      - store_artifacts:
+          path: anchore-reports
  
 workflows:
   # Below is the definition of your workflow.
@@ -34,3 +54,4 @@ workflows:
   sample: 
     jobs:
       - build-and-test
+      - local_image_scan
