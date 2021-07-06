@@ -10,7 +10,7 @@ jobs:
     steps:
       - checkout
       - run:
-          command: npm install -q 
+          command: npm install
       - snyk/scan:
           fail-on-issues: true
           monitor-on-build: false
