@@ -2,17 +2,15 @@
 # See: https://circleci.com/docs/2.0/configuration-reference.
 version: 2.1
 orbs:
-  snyk: snyk/snyk@0.1.0
+  tfsec: mycodeself/tfsec-orb@1.0.5
 jobs:
-  build:
-    docker:
-      - image: 'circleci/node:4.8.2'
+  scan-example:
+    executor: tfsec/default
     steps:
       - checkout
-      - snyk/scan:
-          fail-on-issues: true
-          monitor-on-build: false
-          severity-threshold: high
-          token-variable: SNYK_TOKEN
-workflows: null
+      - tfsec/scan
+workflows:
+  analyze-tf-code:
+    jobs:
+      - scan-example
  
