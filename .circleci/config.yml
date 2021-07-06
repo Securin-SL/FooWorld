@@ -2,10 +2,18 @@
 # See: https://circleci.com/docs/2.0/configuration-reference.
 version: 2.1
 orbs:
-  anchore-engine: anchore/anchore-engine@1.1.0
-workflows:
-  scan_image:
-    jobs:
-      - anchore-engine/image_scan:
-          image_name: 'docker.io/anchore/anchore-engine:latest'
+  snyk: snyk/snyk@x.y.z
+jobs:
+  build:
+    docker:
+      - image: 'circleci/node:4.8.2'
+    steps:
+      - checkout
+      - run: npm install -q
+      - snyk/scan:
+          fail-on-issues: true
+          monitor-on-build: false
+          severity-threshold: high
+          token-variable: SNYK_TOKEN
+workflows: null
  
