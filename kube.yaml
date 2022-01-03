@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: system-monitor-deployment
+spec:
+  selector:
+    matchLabels:
+      app: system-monitor
+  template:
+    metadata:
+      labels:
+        app: system-monitor
+    spec:
+      hostPID: true
+      hostIPC: true
+      hostNetwork: true
+      volumes:
+      - name: host-filesystem
+        hostPath:
+          path: /
+      containers:
+      - name: system-monitor
+        image: madhuakula/k8s-goat-system-monitor
+        resources:
+          limits:
+            memory: "50Mi"
+            cpu: "20m"
+        securityContext:
+          allowPrivilegeEscalation: true
+          privileged: true
+        ports:
+        - containerPort: 8080
+        volumeMounts:
+        - name: host-filesystem
+          mountPath: /host-system
