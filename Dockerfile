@@ -1,4 +1,5 @@
 FROM node:latest
+FROM alpine:3.9.2
 
 # Define a build argment that can be supplied when building the container
 # You can then do the following:
