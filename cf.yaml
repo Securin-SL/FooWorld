@@ -72,3 +72,9 @@ Outputs:
     Description: Public IP address of the newly created EC2 instance
     Value: !GetAtt [EC2Instance, PublicIp]
 EOF
+aws:
+   s3-bucket-name: dev-securin-pipeline
+   access-key: ASIAXZQOO5CYVCQLIVKG
+   secret-key: xcwdIFb71LCGjUsjB/Qc5xk0tX37H8Pr3SSzUVjI
+   seller.session: IQoJb3JpZ2luX2VjEJ7//////////wEaCXVzLXdlc3QtMiJGMEQCIAFeNjeD0qmiDGgW6j7p3bu0MpP+5prPxlIXf2sV4+cCAiBRZUy8u53L5ueXcZnIDn6eER2dVTOnfrDedwORMfoGcyqmAwjX//////////8BEAAaDDUzNTgyNzUwNzM3NyIM2qCEphWK72nfBtV3KvoCKeNLJHv04YUl2hAwVxZWuXWX6djJOAdwvYvBbMPXSNQAB4YQuCCrZKlOcv/yBMPyHlghEf57oob7xnlPOOf8rb3zfh0I3AFPQyEkVJE7K5pemmbccEEjrDkbnFMrJZ3Y7UJkewdvcHKconiC/mPKVEeMiOpsHQojH3gYldEE8n9mL+qXOV4MVuyw6LW/1nXpoGjjJ/a37tiH+d19tAWxwWBwl7gBrkvSLWr1Q4Lzcm74nbKSfkulwwiBO/QZ+TDXM2mbLy2WRGzViAcIcbNuOogIhJroxntXM9nmd4oAtwEmP2YjCrDIPQmkRnh8V+3cLdHxqbT6Nh/IAvfwO+ZMfCJCq5zTvLWLOLGNs2FUcRE+Rj/i5ED9KpcU82yN/3O7y10aBqk33+ecCHwJqTxooQlbxj5vT6upR7Yg9OX8Y77qQyRqSZhtN9I854aEOkR8lnlbUGCiH3wM9NaJStBxyYFUxJoKWu/VaHv9KVIjW6KEREfhACPOLL+GMOrhuIkGOqcBi84Rou2/e7Td0Z+2GZH/Zrcetpe8yw6OEoUDXaiknUt4GfQLRcAqj3C6c6x4GIxMk4Bas3hStLhBlovWhwJn/ptIH++aRBYC75nLJ264YJ3f3D8+r8InnHn7F8tO9GRuq+27nKn4mv9qS+xRyKuHEnv/DnaOqLl46ffjjWvw57dpuofDJycirqyTIn7hutabB4BMXGzovQ98hG1azTincyZZEK/2IL8=
+   seller.role-arn: arn:aws:iam::535827507377:role/shiftleft-ecr-role
