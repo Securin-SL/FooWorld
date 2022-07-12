@@ -1,5 +1,5 @@
 ---
-name: Shiftleft Scan
+name: Shiftleft
 "on":
 - workflow_dispatch
 - pull_request
